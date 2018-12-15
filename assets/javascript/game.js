@@ -18,6 +18,7 @@ var computerChoiceText = document.getElementById("computerChoice-text");
 var winsText = document.getElementById("wins-text");
 var lossesText = document.getElementById("losses-text");
 var usedLettersText = document.getElementById("usedLetters-text");
+var guessesRemainingtext = document.getElementById("guessesRemaining-text");
 
 //create an alphbet array
 for (i = 0; i < 26; i++) {
@@ -68,7 +69,8 @@ document.onkeyup = function (event) {
     computerChoiceText.textContent = "The computer chose: " + computerChoice;
     winsText.textContent = "wins: " + wins;
     lossesText.textContent = "losses: " + losses;
-    usedLettersText.textContent = "Letters Used " + usedLetters;
+    usedLettersText.textContent = "Letters Used: " + usedLetters;
+    guessesRemainingtext.textContent = "Guesses Remaining: " + guessesRemaining
 }
 
 
@@ -84,7 +86,8 @@ function initvar() {
     winsText.textContent = "wins: " + wins;
     lossesText.textContent = "losses: " + losses;
     computerChoiceText.textContent = "The computer chose: " + computerChoice;
-    usedLettersText.textContent = "Letters Used " + usedLetters;
+    usedLettersText.textContent = "Letters Used: " + usedLetters;
+    guessesRemainingtext.textContent = "Guesses Remaining: " + guessesRemaining;
     
     console.log("in initvar function")
 }
