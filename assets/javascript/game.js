@@ -6,7 +6,7 @@ let guessesRemaining = 6;
 let underScoreCount = 0;
 let usedLetters = "";
 let LetterCount = 0;
-let alphbetArray = []
+let alphbetArray = [];
 let computerChoice = "";
 
 
@@ -34,7 +34,7 @@ document.onkeyup = function (event) {
 
     // Determines which key was pressed.
     var userGuess = event.key;
-    //userGuess = userGuess.toLocaleLowerCase;
+    // to do find command to lower the userguess since the array is lowercase
  
     // Hide the directions
     directionsText.textContent = "";
@@ -49,14 +49,13 @@ document.onkeyup = function (event) {
             } else {
                 WrongGuess(guessesRemaining);
             }
-            usedLetters = usedLetters + " , " + userGuess;
+            usedLetters = usedLetters + userGuess + " , " ;
         } else {
             IsLoss(guessesRemaining);
         }
     }
     // Display the user and computer guesses, and wins/losses/ties.
     userGuessText.textContent = "You chose: " + userGuess;
-    computerChoiceText.textContent = "The computer chose: " + computerChoice;
     winsText.textContent = "wins: " + wins;
     lossesText.textContent = "losses: " + losses;
     usedLettersText.textContent = "Letters Used: " + usedLetters;
@@ -66,7 +65,7 @@ document.onkeyup = function (event) {
 
 
 function initvar() {
-    rando = Math.floor(Math.random() * 26 - 1);
+    rando = Math.floor(Math.random() * 26);
     computerChoice = alphbetArray[rando];
     guessesRemaining = 6;
     usedLetters = "";
@@ -74,7 +73,6 @@ function initvar() {
     userGuessText.textContent = "You chose: " + userGuess;
     winsText.textContent = "wins: " + wins;
     lossesText.textContent = "losses: " + losses;
-    computerChoiceText.textContent = "The computer chose: " + computerChoice;
     usedLettersText.textContent = "Letters Used: " + usedLetters;
     guessesRemainingtext.textContent = "Guesses Remaining: " + guessesRemaining;
     
@@ -92,6 +90,7 @@ function IsUsedLetter(userGuess) {
 
 function IsLoss() {
     losses++;
+    alert(' You lost!!!')
     initvar();
 }
 
@@ -103,6 +102,7 @@ function WrongGuess() {
 
 function IsWin() {
     wins++;
+    alert('You won !!!!')
     initvar();
 }
 
